@@ -15,26 +15,34 @@
 
     <div id="play-zone">
         <div id="football">
-            <h2>Who is the football star?</h2>
-            <button data-type="footballers"></button>
+            <div id="image-footballer"></div>
+            <div class="answer-zone">
+                <h2>Guess the football star!</h2> 
+           
             <input id="answer-box" type="text">
-            <button data-type="submit">Submit answer</button>
+            <button id="submit" data-type="submit">Submit answer</button>
             <button data-type="hint" class="btn-hint">Hint</button>
+            </div>
+            
         </div>
 
         <div id="stadium">
-            <h2>Can you guess the stadium?</h2>
-            <button data-type="stadium"></button>
-             <input id="answer-box" type="text">
-             <button data-type="submit">Submit answer</button>
-             <button data-type="hint" class="btn-hint">Hint</button>
+            <div id="image-stadium"></div>
+            <div class="answer-zone">
+                <h2> Guess the stadium!</h2>
+                 <input id="answer-box" type="text">
+                 <button id="submit" data-type="submit">Submit answer</button>
+                 <button data-type="hint" class="btn-hint">Hint</button>
+            </div>
+            
         </div> 
 
     
     </div>
-    <div id="score">
-        <p>Correct answer <span  >0</span>  </p>
-        <p>Wrong choice <span>0</span> </p>
+    <div id="score-zone">
+        <p class="scores">Correct answer <span id="
+            score" >0</span>  </p>
+        <p class="scores">Wrong answer <span id="wrong">0</span> </p>
     </div>
 
    
