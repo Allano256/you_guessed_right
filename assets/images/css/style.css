@@ -28,12 +28,37 @@ body {
    padding: 1%;
     
 }
+#football {
+    position: relative;
+}
+
+#stadium {
+    position: relative;
+}
+.zone--zone {
+    position: absolute;
+    bottom: 10px;
+   
+}
 
 #football {
     width: 100%;
     height: 200px ;
     background-color: aqua;
    
+}
+
+
+
+#answer-box {
+   border-radius: 10px;
+}
+
+#submit {
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin-top: 5px ;
 }
 
 #stadium {
@@ -56,7 +81,7 @@ body {
     color: green;
 }
 
-p{
+p {
     font-family:'ubuntu', sans-serif;
     font-size: 20px ;
     font-weight: bold;
