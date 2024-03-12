@@ -20,9 +20,10 @@
   //Find the length of array of images
   let arrayLength = footballImagesArray.length;
   let newArray = [];
-
+  
   for(let i = 0; i < arrayLength; i++){
-    newArray[i] = newImage();
+    newArray[i] = new Image();
+    newArray[i].name = footballImagesArray[i].name;
     newArray[i].image = footballImagesArray[i].image;
     newArray[i].width = footballImagesArray[i].width;
     newArray[i].height = footballImagesArray[i].height;
