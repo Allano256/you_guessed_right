@@ -28,22 +28,22 @@ body {
    padding: 1%;
     
 }
-#football {
+/* #football {
     position: relative;
-}
+} */
 
-#stadium {
+/* #stadium {
     position: relative;
 }
 .zone--zone {
     position: absolute;
     bottom: 10px;
    
-}
+} */
 
 #football {
     width: 100%;
-    height: 200px ;
+    height: 600px ;
     background-color: aqua;
    
 }
@@ -61,19 +61,19 @@ body {
     margin-top: 5px ;
 }
 
-#randomImage {
+#random-image {
     width: 150px;
-    height: 30px;
+    height: 20px;
     margin-top: 5px ;
     border-radius: 10px;
 }
 
-#stadium {
+/* #stadium {
     width: 100%;
     height: 200px;
     background-color: grey;
     margin-top: 20px;
-}
+} */
 
 #score-zone {
     margin-top: 40px;

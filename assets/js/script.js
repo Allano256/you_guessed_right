@@ -4,67 +4,29 @@
   function randomImages(){
     let footballImagesArray = [{
         name:'Suarez' ,
-        image: 'https://free4kwallpapers.com/uploads/originals/2016/04/28/luis-suarez-uruguayan-footballer-wallpaper.jpg',width:'100px',height:'100px'},
+        image: 'https://free4kwallpapers.com/uploads/originals/2016/04/28/luis-suarez-uruguayan-footballer-wallpaper.jpg',width:'50px',height:'50px'},
         
         { name: 'Messi',
-        image: 'https://free4kwallpapers.com/uploads/originals/2016/04/28/lionel-messi-argentine-footballer-wallpaper.jpg',width:'100px',height:'100px'}
+        image: 'https://free4kwallpapers.com/uploads/originals/2016/04/28/lionel-messi-argentine-footballer-wallpaper.jpg',width:'50px',height:'50px'}
        ,
         { name: 'Hazard',
-        image: 'https://free4kwallpapers.com/uploads/originals/2016/04/19/eden-hazard-belgian-footballer-wallpaper.jpg',width:'100px',height:'100px'}
+        image: 'https://free4kwallpapers.com/uploads/originals/2016/04/19/eden-hazard-belgian-footballer-wallpaper.jpg',width:'50px',height:'50px'}
        ,
       { name: 'Iniesta',
-      image: 'https://free4kwallpapers.com/uploads/originals/2016/04/15/andres-iniesta-spanish-footballer-wallpaper.jpg',width:'100px',height:'100px'}
+      image: 'https://free4kwallpapers.com/uploads/originals/2016/04/15/andres-iniesta-spanish-footballer-wallpaper.jpg',width:'50px',height:'50px'}
        ,
   ];
 
-  //Find the length of array of images
-  let arrayLength = footballImagesArray.length;
-  let newArray = [];
+  imgNumber = Math.abs(Math.floor(Math.random() * (0 - footballImagesArray.length))) 
+
+  console.log(imgNumber);
+   let images = document.getElementById('img');
+   images.innerHTML = `<img src= "${footballImagesArray[imgNumber].image}" style ="width:400px ">`;
   
-  for(let i = 0; i < arrayLength; i++){
-    newArray[i] = new Image();
-    newArray[i].name = footballImagesArray[i].name;
-    newArray[i].image = footballImagesArray[i].image;
-    newArray[i].width = footballImagesArray[i].width;
-    newArray[i].height = footballImagesArray[i].height;
 
   }
 
-  //create a random number for the image to be displayed
-  function getRandomNum(min,max){
-    imgNumber = Math.floor(Math.random() * (min - max + 1))
 
-    return newArray[imgNumber];
-  }
-
-  let newImage = getRandomNum(0, newArray.length - 1);
-
-  //Remove the previous image
-   let images = document.getElementsByTagName('image');
-
-   let I = images.length;
-   for(let p = 0; p < I; p++){
-    images[0].parentNode.removeChild(images[0]);
-   }
-
-
-   //Show new random image
-   document.body.appendChild(newImage);
-  }
-
-
-// let fottballStadiums = [
-//      {name: 'wembley',
-//      image: 'https://a.cdn-hotels.com/gdcs/production67/d1184/209ba1af-54ee-4550-9fd5-f0e80adc25a3.jpg',width:'100px',height:'100px' }
-//     ,
-//     { name: 'Old trafford',
-//     image: 'http://www.sportslook.net/wp-content/uploads/2015/03/SD-OldTrafford-1.jpg',width:'100px',height:'100px'}
-//    ,
-//     { name: 'Allianz Arena',
-//     image: 'http://www.interpcan.ca/wp-content/uploads/sites/260/2020/03/b178a0878f3ab1bcdbd4e82fcb1b77ae.jpg',width:'100px',height:'100px'}
-//    ,
-
-// ]
 
 /**
  * 1.Allow the DOM to load and add event
@@ -73,35 +35,16 @@
  * 
  */
 
+
 document.addEventListener('DOMContentLoaded', function(){
-    let buttons = document.getElementsByTagName('button');
+   
+    let button = document.getElementById('random-image');
+    button.addEventListener('click', randomImages);
 
-    for(let button of buttons){
-        button.addEventListener('click', function(){
-            console.log('We active!');
-            alert('We active buttons!');
-            if(this.getAttribute('data-type') === "submit"){
-               checkAnswer();
-            } else {
-                alert("Oh sorry try again!");
-                /* if the person gives a wrong answer,a new image is generated */
-                randomImages();
-            }
-        })
-    }
-    
-    // document.getElementById('randomImage').addEventListener('click', function(){
 
-    // })
-
+   
 })
 
-/* create a function to start running the game */
-
-function runGame(){
-    
-
-}
 
 
 
