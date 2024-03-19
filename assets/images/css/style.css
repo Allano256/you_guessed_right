@@ -13,9 +13,7 @@ body {
    
 }
 
-.header {
 
-}
 
 #play-zone {
     display: block;
@@ -28,23 +26,12 @@ body {
    padding: 1%;
     
 }
-/* #football {
-    position: relative;
-} */
-
-/* #stadium {
-    position: relative;
-}
-.zone--zone {
-    position: absolute;
-    bottom: 10px;
-   
-} */
 
 #football {
     width: 100%;
     height: 600px ;
     background-color: aqua;
+    border-radius:10px ;
    
 }
 
@@ -52,28 +39,29 @@ body {
 
 #answer-box {
    border-radius: 10px;
+   height: 40px;
+   width: 130px;
+   font-size: 1.3rem;
+   margin: 20px;
+  
+  
 }
 
 #submit {
     border-radius: 10px;
-    width: 100px;
-    height: 30px;
-    margin-top: 5px ;
+    width: 130px;
+    height: 40px;
+   
 }
 
 #random-image {
     width: 150px;
     height: 20px;
-    margin-top: 5px ;
+    margin:  30px ;
     border-radius: 10px;
 }
 
-/* #stadium {
-    width: 100%;
-    height: 200px;
-    background-color: grey;
-    margin-top: 20px;
-} */
+
 
 #score-zone {
     margin-top: 40px;
@@ -93,6 +81,40 @@ p {
     font-size: 20px ;
     font-weight: bold;
 }
+
+#selected-image {
+   border-radius: 5%;
+    width: 200px;
+   
+}
+
+@media only screen and (min-width: 600px) {
+    #selected-image {
+        border-radius: 5%;
+         width: 400px;
+        
+     }
+}
+
+@media only screen and (min-width: 768px) {
+    #selected-image {
+        border-radius: 5%;
+         width: 600px;
+         object-fit: cover;
+        
+     }
+
+     #score-zone {
+        margin-top:100px;
+       
+    }
+    #play-zone{
+        display: inline-block;
+    }
+}
+
+
+
 
 
 
