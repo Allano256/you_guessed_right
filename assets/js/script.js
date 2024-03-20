@@ -41,7 +41,7 @@ let footballImagesArray = [{
     },
 
     {
-    name: 'ronaldhinho',
+    name: 'ronaldinho',
     image:'http://static.sportskeeda.com/wp-content/uploads/2013/01/Ronaldinho-in-action-1169846.jpg'
     }
    
@@ -111,7 +111,10 @@ function userResponse(){
         alert("Please fill answer box")
     } else if  (userAnswer === selectedImage.name ){
         alert("Congratulations you guessed it");
+        randomImages();
         scoreIncrease();
+        
+
         
     } else {
         alert("Oh sorry, try again!");
@@ -127,8 +130,15 @@ function userResponse(){
 /* Increase score */
 
 function scoreIncrease(){
- let oldScore =   document.getElementById('score').textContent;
- document.getElementById('score').textContent = ++oldScore;
+ let newScore =   document.getElementById('score').textContent;
+ document.getElementById('score').textContent = ++newScore;
+ if(newScore === 5){
+    alert("Congratulations, CHAMPION!!!");
+    buttonsSubmit.removeEventListener('click',  userResponse);
+   buttonRandomImage.removeEventListener('click', randomImages);
+  
+ }
+
 
 }
 
