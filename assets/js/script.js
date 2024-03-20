@@ -139,10 +139,10 @@ function wrongScoreIncrease(){
 
    if(newScore === 2){
     alert('game over');
+   buttonsSubmit.removeEventListener('click',  userResponse);
+   buttonRandomImage.removeEventListener('click', randomImages);
   
    }
 
-   buttonsSubmit.removeEventListener('click',  userResponse);
-   buttonRandomImage.removeEventListener('click', randomImages);
 }
 
