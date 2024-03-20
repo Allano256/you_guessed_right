@@ -107,9 +107,12 @@ function userResponse(){
     
    
 
-    if(userAnswer === selectedImage.name ){
-       alert("Congratulations you guessed it");
-       scoreIncrease();
+    if (!userAnswer){
+        alert("Please fill answer box")
+    } else if  (userAnswer === selectedImage.name ){
+        alert("Congratulations you guessed it");
+        scoreIncrease();
+        
     } else {
         alert("Oh sorry, try again!");
         wrongScoreIncrease();
