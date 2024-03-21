@@ -132,12 +132,13 @@ function userResponse(){
 function scoreIncrease(){
  let newScore =   document.getElementById('score').textContent;
  document.getElementById('score').textContent = ++newScore;
- if(newScore === 5){
+ if(newScore === 2){
     alert("Congratulations, CHAMPION!!!");
     buttonsSubmit.removeEventListener('click',  userResponse);
    buttonRandomImage.removeEventListener('click', randomImages);
   
  }
+ 
 
 
 }
@@ -158,4 +159,9 @@ function wrongScoreIncrease(){
    }
 
 }
+
+/* Resetting the game */
+document.getElementById('again').addEventListener('click', function(){
+     document.getElementById('answer-box').value = '';
+})
 
