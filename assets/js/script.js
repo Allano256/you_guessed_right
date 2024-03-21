@@ -113,19 +113,19 @@ function userResponse(){
         alert("Congratulations you guessed it");
         randomImages();
         scoreIncrease();
-        document.getElementById('answer-box').value = '';
-        
-
-        
+        clearAnswerbox();
+           
     } else {
         alert("Oh sorry, try again!");
         wrongScoreIncrease();
+        clearAnswerbox();
     }
-
-
 
 }
 
+function clearAnswerbox(){
+    document.getElementById('answer-box').value = '';
+}
 
 
 /* Increase score */
@@ -156,7 +156,7 @@ function wrongScoreIncrease(){
     alert('game over');
    buttonsSubmit.removeEventListener('click',  userResponse);
    buttonRandomImage.removeEventListener('click', randomImages);
-  
+   
    }
 
 }
@@ -167,8 +167,6 @@ document.getElementById('again').addEventListener('click', function(){
      buttonRandomImage.addEventListener('click', randomImages);
      buttonsSubmit.addEventListener('click', userResponse);
      document.getElementById('wrong').textContent = '0';
-     document.getElementById('score').textContent = '0';
-
-     
+     document.getElementById('score').textContent = '0'; 
 })
 
