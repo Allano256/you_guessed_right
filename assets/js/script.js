@@ -1,172 +1,163 @@
 /** create random pictures from array
- *Create a function that returns a random picture from array when the display button is clicked */  
+ *Create a function that returns a random picture from array when the display button is clicked */
 
-let buttonsSubmit = document.getElementById('submit');
-let buttonRandomImage = document.getElementById('random-image');
+let buttonsSubmit = document.getElementById("submit");
+let buttonRandomImage = document.getElementById("random-image");
 
-let footballImagesArray = [{
-    name:'suarez' ,
-    image: 'https://free4kwallpapers.com/uploads/originals/2016/04/28/luis-suarez-uruguayan-footballer-wallpaper.jpg'},
-    
-    { name: 'messi',
-    image: 'https://free4kwallpapers.com/uploads/originals/2016/04/28/lionel-messi-argentine-footballer-wallpaper.jpg'}
-   ,
-    { name: 'hazard',
-    image: 'https://free4kwallpapers.com/uploads/originals/2016/04/19/eden-hazard-belgian-footballer-wallpaper.jpg'}
-   ,
-  { name: 'iniesta',
-  image: 'https://free4kwallpapers.com/uploads/originals/2016/04/15/andres-iniesta-spanish-footballer-wallpaper.jpg'}
-   ,
-   {
-    name: 'ronaldo',
-    image: 'http://newarena.com/wp-content/uploads/2018/04/GettyImages-938394414-1024x683.jpg'
-   },
-    {   name:'mane',
-        image:'https://static.businessinsider.com/image/5e1496e0855cc2475b3ba926.jpg'
-    },
+let footballImagesArray = [
+  {
+    name: "suarez",
+    image:
+      "https://free4kwallpapers.com/uploads/originals/2016/04/28/luis-suarez-uruguayan-footballer-wallpaper.jpg",
+  },
 
-    { 
-       name:'rashford',
-       image: 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2020_25/3390304/200616-marcus-rashford-mc-1409.JPG'
-    },
+  {
+    name: "messi",
+    image:
+      "https://free4kwallpapers.com/uploads/originals/2016/04/28/lionel-messi-argentine-footballer-wallpaper.jpg",
+  },
+  {
+    name: "hazard",
+    image:
+      "https://free4kwallpapers.com/uploads/originals/2016/04/19/eden-hazard-belgian-footballer-wallpaper.jpg",
+  },
+  {
+    name: "iniesta",
+    image:
+      "https://free4kwallpapers.com/uploads/originals/2016/04/15/andres-iniesta-spanish-footballer-wallpaper.jpg",
+  },
+  {
+    name: "ronaldo",
+    image:
+      "http://newarena.com/wp-content/uploads/2018/04/GettyImages-938394414-1024x683.jpg",
+  },
+  {
+    name: "mane",
+    image:
+      "https://static.businessinsider.com/image/5e1496e0855cc2475b3ba926.jpg",
+  },
 
-    {
-        name: 'salah',
-        image:'https://sillyseason.com/wp-content/uploads/2016/10/Top-ten-best-performing-footballers-in-the-world-2018.jpg' 
-    },
+  {
+    name: "rashford",
+    image:
+      "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2020_25/3390304/200616-marcus-rashford-mc-1409.JPG",
+  },
 
-    {
-        name: 'kane',
-        image:'https://d31xsmoz1lk3y3.cloudfront.net/big/452153.jpg?v=1549220749'
-    },
+  {
+    name: "salah",
+    image:
+      "https://sillyseason.com/wp-content/uploads/2016/10/Top-ten-best-performing-footballers-in-the-world-2018.jpg",
+  },
 
-    {
-    name: 'ronaldinho',
-    image:'http://static.sportskeeda.com/wp-content/uploads/2013/01/Ronaldinho-in-action-1169846.jpg'
-    }
-   
-  
+  {
+    name: "kane",
+    image: "https://d31xsmoz1lk3y3.cloudfront.net/big/452153.jpg?v=1549220749",
+  },
+
+  {
+    name: "ronaldinho",
+    image:
+      "http://static.sportskeeda.com/wp-content/uploads/2013/01/Ronaldinho-in-action-1169846.jpg",
+  },
 ];
 
-  let selectedImage;
+let selectedImage;
 
-  function randomImages(){
-   
-     
-  imgNumber = Math.abs(Math.floor(Math.random() * (0 - footballImagesArray.length))) 
+function randomImages() {
+  imgNumber = Math.abs(
+    Math.floor(Math.random() * (0 - footballImagesArray.length))
+  );
 
   console.log(imgNumber);
-   let images = document.getElementById('img');
-   images.innerHTML = `<img  id="selected-image" src= "${footballImagesArray[imgNumber].image}">`;
-  
-   selectedImage = footballImagesArray[imgNumber];
-  
+  let images = document.getElementById("img");
+  images.innerHTML = `<img  id="selected-image" src= "${footballImagesArray[imgNumber].image}">`;
 
-  }
-
-
+  selectedImage = footballImagesArray[imgNumber];
+}
 
 /**
  * 1.Allow the DOM to load and add event
  * listeners to the buttons.
  * 2.When the page loads,a random image to appear.
- * 
+ *
  */
- 
 
-document.addEventListener('DOMContentLoaded', function(){
-   
-    
-buttonRandomImage.addEventListener('click', randomImages);
-buttonsSubmit.addEventListener('click', userResponse);
-     
-             
-})
+document.addEventListener("DOMContentLoaded", function () {
+  buttonRandomImage.addEventListener("click", randomImages);
+  buttonsSubmit.addEventListener("click", userResponse);
+});
 
-document.addEventListener('keydown', function(event){
-      if (event.key === "Enter"){
-        userResponse();
-      }
-})
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    userResponse();
+  }
+});
 
-
-
-/** This function is meant to check the outcome of the random image and match it with the name*/ 
-
-
+/** This function is meant to check the outcome of the random image and match it with the name*/
 
 /**This function is mean't to check the user response
  * and match it to see if it matches the image and name.
  * Then alert a congragulatory message to the user!
  */
 
-function userResponse(){
-            
-    let userAnswer = document.getElementById('answer-box').value;
-    console.log(userAnswer,  selectedImage.name );
-    
-   
+function userResponse() {
+  let userAnswer = document.getElementById("answer-box").value;
+  console.log(userAnswer, selectedImage.name);
 
-    if (!userAnswer){
-        alert("Please fill answer box")
-    } else if  (userAnswer === selectedImage.name ){
-        alert("Congratulations you guessed it");
-        randomImages();
-        scoreIncrease();
-        clearAnswerbox();
-           
-    } else {
-        alert("Oh sorry, try again!");
-        wrongScoreIncrease();
-        clearAnswerbox();
-    }
-
+  if (!userAnswer) {
+    alert("Please fill answer box");
+  } else if (userAnswer === selectedImage.name) {
+   document.getElementById('message').textContent = 'You guessed right...'
+    randomImages();
+    scoreIncrease();
+    clearAnswerbox();
+  } else {
+    document.getElementById('message').textContent = 'Oh sorry try again...'
+    wrongScoreIncrease();
+    clearAnswerbox();
+  }
 }
 
-function clearAnswerbox(){
-    document.getElementById('answer-box').value = '';
+function clearAnswerbox() {
+  document.getElementById("answer-box").value = "";
 }
-
 
 /* Increase score */
 
-function scoreIncrease(){
- let newScore =   document.getElementById('score').textContent;
- document.getElementById('score').textContent = ++newScore;
- if(newScore === 2){
-    alert("Congratulations, CHAMPION!!!");
-    buttonsSubmit.removeEventListener('click',  userResponse);
-   buttonRandomImage.removeEventListener('click', randomImages);
-  
- }
- 
-
-
+function scoreIncrease() {
+  let newScore = document.getElementById("score").textContent;
+  document.getElementById("score").textContent = ++newScore;
+  if (newScore === 2) {
+    document.getElementById('message').textContent = 'CONGS,CHAMPION!!!';
+    document.getElementById("football").style.backgroundColor = "#90ee90";
+    document.getElementById("message").style.fontSize = "50px";
+    buttonsSubmit.removeEventListener("click", userResponse);
+    buttonRandomImage.removeEventListener("click", randomImages);
+  }
 }
 
 /* Decrease score */
 
-function wrongScoreIncrease(){
-   let oldScore = document.getElementById('wrong').textContent;
-   let newScore = ++oldScore;
-   document.getElementById('wrong').textContent = newScore;
-    
+function wrongScoreIncrease() {
+  let oldScore = document.getElementById("wrong").textContent;
+  let newScore = ++oldScore;
+  document.getElementById("wrong").textContent = newScore;
 
-   if(newScore === 2){
-    alert('game over');
-   buttonsSubmit.removeEventListener('click',  userResponse);
-   buttonRandomImage.removeEventListener('click', randomImages);
-   
-   }
-
+  if (newScore === 2) {
+    document.getElementById('message').textContent = 'Game Over...'
+    buttonsSubmit.removeEventListener("click", userResponse);
+    buttonRandomImage.removeEventListener("click", randomImages);
+  }
 }
 
-/* Resetting the game */
-document.getElementById('again').addEventListener('click', function(){
-     document.getElementById('answer-box').value = '';
-     buttonRandomImage.addEventListener('click', randomImages);
-     buttonsSubmit.addEventListener('click', userResponse);
-     document.getElementById('wrong').textContent = '0';
-     document.getElementById('score').textContent = '0'; 
-})
 
+
+
+/* Resetting the game */
+document.getElementById("again").addEventListener("click", function () {
+  document.getElementById("answer-box").value = "";
+  buttonRandomImage.addEventListener("click", randomImages);
+  buttonsSubmit.addEventListener("click", userResponse);
+  document.getElementById("wrong").textContent = "0";
+  document.getElementById("score").textContent = "0";
+});

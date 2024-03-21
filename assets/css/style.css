@@ -1,120 +1,95 @@
-
-*{
-   box-sizing: border-box; 
-   padding: 0%; 
-   margin: 0%;
-   
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
 }
 
 body {
-    font-family:'ubuntu', sans-serif;
-   text-align: center; 
-   overflow: hidden;
-   
+  font-family: "ubuntu", sans-serif;
+  text-align: center;
+  overflow: hidden;
 }
 
-
-
 #play-zone {
-    display: block;
-   justify-content: center;
-   width: 85%;
-   height: 75vh;
-   max-height: 400px;
-   max-width: 820px;
-   margin: 0 auto;
-   padding: 1%;
-    
+  display: block;
+  justify-content: center;
+  width: 85%;
+  height: 75vh;
+  max-height: 400px;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1%;
 }
 
 #football {
-    width: 100%;
-    height: 600px ;
-    background-color: aqua;
-    border-radius:10px ;
-   
+  width: 100%;
+  height: 600px;
+  background-color: aqua;
+  border-radius: 10px;
 }
 
-
-
 #answer-box {
-   border-radius: 10px;
-   height: 40px;
-   width: 130px;
-   font-size: 1.3rem;
-   margin: 20px;
-  
-  
+  border-radius: 10px;
+  height: 40px;
+  width: 130px;
+  font-size: 1.3rem;
+  margin: 20px;
 }
 
 #submit {
-    border-radius: 10px;
-    width: 130px;
-    height: 40px;
-   
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
 }
 
 #random-image {
-    width: 150px;
-    height: 20px;
-    margin:  30px ;
-    border-radius: 10px;
+  width: 150px;
+  height: 20px;
+  margin: 30px;
+  border-radius: 10px;
 }
 
-
-
 #score-zone {
-    margin-top: 40px;
-   
+  margin-top: 40px;
 }
 
 #score {
-    color: rgb(19, 11, 11);
+  color: rgb(19, 11, 11);
 }
 
 #wrong {
-    color: green;
+  color: green;
 }
 
 p {
-    font-family:'ubuntu', sans-serif;
-    font-size: 20px ;
-    font-weight: bold;
+  font-family: "ubuntu", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #selected-image {
-   border-radius: 5%;
-    width: 200px;
-   
+  border-radius: 5%;
+  width: 200px;
 }
 
 @media only screen and (min-width: 600px) {
-    #selected-image {
-        border-radius: 5%;
-         width: 400px;
-        
-     }
+  #selected-image {
+    border-radius: 5%;
+    width: 400px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    #selected-image {
-        border-radius: 5%;
-         width: 600px;
-         object-fit: cover;
-        
-     }
+  #selected-image {
+    border-radius: 5%;
+    width: 600px;
+    object-fit: cover;
+  }
 
-     #score-zone {
-        margin-top:100px;
-       
-    }
-    #play-zone{
-        display: inline-block;
-    }
+  #score-zone {
+    margin-top: 100px;
+  }
+  #play-zone {
+    display: inline-block;
+  }
 }
-
-
-
-
-
-
