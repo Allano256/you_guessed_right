@@ -130,7 +130,7 @@ function scoreIncrease() {
   if (newScore === 2) {
     document.getElementById('message').textContent = 'CONGS,CHAMPION!!!';
     document.getElementById("football").style.backgroundColor = "#90ee90";
-    document.getElementById("message").style.fontSize = "50px";
+    document.getElementById("message").style.fontSize = "30px";
     buttonsSubmit.removeEventListener("click", userResponse);
     buttonRandomImage.removeEventListener("click", randomImages);
   }
