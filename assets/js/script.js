@@ -113,6 +113,7 @@ function userResponse(){
         alert("Congratulations you guessed it");
         randomImages();
         scoreIncrease();
+        document.getElementById('answer-box').value = '';
         
 
         
@@ -163,5 +164,11 @@ function wrongScoreIncrease(){
 /* Resetting the game */
 document.getElementById('again').addEventListener('click', function(){
      document.getElementById('answer-box').value = '';
+     buttonRandomImage.addEventListener('click', randomImages);
+     buttonsSubmit.addEventListener('click', userResponse);
+     document.getElementById('wrong').textContent = '0';
+     document.getElementById('score').textContent = '0';
+
+     
 })
 
