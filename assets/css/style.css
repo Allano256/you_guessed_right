@@ -42,6 +42,12 @@ body {
   height: 40px;
 }
 
+#again {
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+}
+
 #random-image {
   width: 150px;
   height: 20px;

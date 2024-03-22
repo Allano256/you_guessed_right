@@ -106,7 +106,8 @@ function userResponse() {
   let userAnswer = document.getElementById("answer-box").value;
 
   if (!userAnswer) {
-    alert("Please fill answer box");
+    displayMessage("Please fill answer box");
+    
   } else if (userAnswer === selectedImage.name) {
     displayMessage("You guessed right...");
     randomImages();
