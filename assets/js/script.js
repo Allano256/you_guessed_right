@@ -63,8 +63,6 @@ let footballImagesArray = [
   },
 ];
 
-
-
 function randomImages() {
   imgNumber = Math.abs(
     Math.floor(Math.random() * (0 - footballImagesArray.length))
@@ -100,19 +98,22 @@ document.addEventListener("keydown", function (event) {
  * Then alert a congragulatory message to the user!
  */
 
+const displayMessage = function (message) {
+  document.getElementById("message").textContent = message;
+};
+
 function userResponse() {
   let userAnswer = document.getElementById("answer-box").value;
- 
 
   if (!userAnswer) {
     alert("Please fill answer box");
   } else if (userAnswer === selectedImage.name) {
-    document.getElementById("message").textContent = "You guessed right...";
+    displayMessage("You guessed right...");
     randomImages();
     scoreIncrease();
     clearAnswerbox();
   } else {
-    document.getElementById("message").textContent = "Oh sorry try again...";
+    displayMessage("Oh sorry try again...");
     wrongScoreIncrease();
     clearAnswerbox();
   }
@@ -128,7 +129,7 @@ function scoreIncrease() {
   let newScore = document.getElementById("score").textContent;
   document.getElementById("score").textContent = ++newScore;
   if (newScore === 2) {
-    document.getElementById("message").textContent = "CONGS,CHAMPION!!!";
+    displayMessage("CONGS,CHAMPION!!!");
     document.getElementById("football").style.backgroundColor = "#90ee90";
     document.getElementById("message").style.fontSize = "30px";
     buttonsSubmit.removeEventListener("click", userResponse);
@@ -144,7 +145,7 @@ function wrongScoreIncrease() {
   document.getElementById("wrong").textContent = newScore;
 
   if (newScore === 2) {
-    document.getElementById("message").textContent = "Game Over...";
+    displayMessage("Game Over...");
     buttonsSubmit.removeEventListener("click", userResponse);
     buttonRandomImage.removeEventListener("click", randomImages);
   }
