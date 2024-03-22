@@ -3,6 +3,8 @@
 
 let buttonsSubmit = document.getElementById("submit");
 let buttonRandomImage = document.getElementById("random-image");
+let images = document.getElementById("img");
+let selectedImage;
 
 let footballImagesArray = [
   {
@@ -61,15 +63,13 @@ let footballImagesArray = [
   },
 ];
 
-let selectedImage;
+
 
 function randomImages() {
   imgNumber = Math.abs(
     Math.floor(Math.random() * (0 - footballImagesArray.length))
   );
 
-  console.log(imgNumber);
-  let images = document.getElementById("img");
   images.innerHTML = `<img  id="selected-image" src= "${footballImagesArray[imgNumber].image}">`;
 
   selectedImage = footballImagesArray[imgNumber];
@@ -102,17 +102,17 @@ document.addEventListener("keydown", function (event) {
 
 function userResponse() {
   let userAnswer = document.getElementById("answer-box").value;
-  console.log(userAnswer, selectedImage.name);
+ 
 
   if (!userAnswer) {
     alert("Please fill answer box");
   } else if (userAnswer === selectedImage.name) {
-   document.getElementById('message').textContent = 'You guessed right...'
+    document.getElementById("message").textContent = "You guessed right...";
     randomImages();
     scoreIncrease();
     clearAnswerbox();
   } else {
-    document.getElementById('message').textContent = 'Oh sorry try again...'
+    document.getElementById("message").textContent = "Oh sorry try again...";
     wrongScoreIncrease();
     clearAnswerbox();
   }
@@ -128,7 +128,7 @@ function scoreIncrease() {
   let newScore = document.getElementById("score").textContent;
   document.getElementById("score").textContent = ++newScore;
   if (newScore === 2) {
-    document.getElementById('message').textContent = 'CONGS,CHAMPION!!!';
+    document.getElementById("message").textContent = "CONGS,CHAMPION!!!";
     document.getElementById("football").style.backgroundColor = "#90ee90";
     document.getElementById("message").style.fontSize = "30px";
     buttonsSubmit.removeEventListener("click", userResponse);
@@ -144,20 +144,16 @@ function wrongScoreIncrease() {
   document.getElementById("wrong").textContent = newScore;
 
   if (newScore === 2) {
-    document.getElementById('message').textContent = 'Game Over...'
+    document.getElementById("message").textContent = "Game Over...";
     buttonsSubmit.removeEventListener("click", userResponse);
     buttonRandomImage.removeEventListener("click", randomImages);
   }
 }
 
-
-
-
 /* Resetting the game */
 document.getElementById("again").addEventListener("click", function () {
-  document.getElementById("answer-box").value = "";
-  buttonRandomImage.addEventListener("click", randomImages);
-  buttonsSubmit.addEventListener("click", userResponse);
+  document.getElementById("answer-box");
+  document.getElementById("random-image");
   document.getElementById("wrong").textContent = "0";
   document.getElementById("score").textContent = "0";
 });

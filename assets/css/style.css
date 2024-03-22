@@ -54,11 +54,13 @@ body {
 }
 
 #score {
-  color: rgb(19, 11, 11);
+  color: green;
 }
 
 #wrong {
-  color: green;
+ 
+  color: #ca0d0d;
+
 }
 
 p {
