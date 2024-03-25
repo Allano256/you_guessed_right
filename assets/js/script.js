@@ -83,7 +83,7 @@ const displayMessage = function (message) {
 
 /** This function checks the outcome of the random image and matches it with the user's response*/
 function userResponse() {
-  let userAnswer = document.getElementById("answer-box").value;
+  let userAnswer = document.getElementById("answer-box").value.toLowerCase();
 
   if (!userAnswer) {
     displayMessage("Please fill answer box");
