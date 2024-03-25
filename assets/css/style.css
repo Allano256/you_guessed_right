@@ -56,7 +56,7 @@ body {
 }
 
 #score-zone {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 #score {
@@ -81,7 +81,7 @@ p {
 }
 
 #message {
-     margin-bottom: 6px;
+     margin-bottom: 2px;
 }
 /*Media querry for small screen size */
 @media only screen and (min-width: 600px) {

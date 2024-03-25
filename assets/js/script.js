@@ -64,7 +64,6 @@ function randomImages() {
  * 1.Allow the DOM to load and add event
  * listeners to the buttons.
  */
-
 document.addEventListener("DOMContentLoaded", function () {
   buttonRandomImage.addEventListener("click", randomImages);
   buttonsSubmit.addEventListener("click", userResponse);
