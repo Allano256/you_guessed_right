@@ -75,7 +75,9 @@ p {
 
 #selected-image {
   border-radius: 5%;
-  width: 200px;
+  max-width:100%;
+  max-height:100%;
+  
 }
 /*Media querry for small screen size */
 @media only screen and (min-width: 600px) {

@@ -44,20 +44,8 @@ let footballImagesArray = [
   },
 
   {
-    name: "salah",
-    image:
-      "https://sillyseason.com/wp-content/uploads/2016/10/Top-ten-best-performing-footballers-in-the-world-2018.jpg",
-  },
-
-  {
     name: "kane",
     image: "https://d31xsmoz1lk3y3.cloudfront.net/big/452153.jpg?v=1549220749",
-  },
-
-  {
-    name: "ronaldinho",
-    image:
-      "http://static.sportskeeda.com/wp-content/uploads/2013/01/Ronaldinho-in-action-1169846.jpg",
   },
 ];
 
