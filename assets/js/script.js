@@ -1,11 +1,9 @@
-/** create random pictures from array
- *Create a function that returns a random picture from array when the display button is clicked */
-
 let buttonsSubmit = document.getElementById("submit");
 let buttonRandomImage = document.getElementById("random-image");
 let images = document.getElementById("img");
 let selectedImage;
 
+/*Array containing the images to be displayed */
 let footballImagesArray = [
   {
     name: "suarez",
@@ -63,6 +61,7 @@ let footballImagesArray = [
   },
 ];
 
+/* A function that generates random images */
 function randomImages() {
   imgNumber = Math.abs(
     Math.floor(Math.random() * (0 - footballImagesArray.length))
@@ -76,8 +75,6 @@ function randomImages() {
 /**
  * 1.Allow the DOM to load and add event
  * listeners to the buttons.
- * 2.When the page loads,a random image to appear.
- *
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -91,23 +88,17 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-/** This function is meant to check the outcome of the random image and match it with the name*/
-
-/**This function is mean't to check the user response
- * and match it to see if it matches the image and name.
- * Then alert a congragulatory message to the user!
- */
-
+/*This variable is for the message to be displayed as a result of any input */
 const displayMessage = function (message) {
   document.getElementById("message").textContent = message;
 };
 
+/** This function checks the outcome of the random image and matches it with the user's response*/
 function userResponse() {
   let userAnswer = document.getElementById("answer-box").value;
 
   if (!userAnswer) {
     displayMessage("Please fill answer box");
-    
   } else if (userAnswer === selectedImage.name) {
     displayMessage("You guessed right...");
     randomImages();
@@ -119,13 +110,12 @@ function userResponse() {
     clearAnswerbox();
   }
 }
-
+/*This function clears the answer box when the user submits an answer */
 function clearAnswerbox() {
   document.getElementById("answer-box").value = "";
 }
 
-/* Increase score */
-
+/* This function increases the score */
 function scoreIncrease() {
   let newScore = document.getElementById("score").textContent;
   document.getElementById("score").textContent = ++newScore;
@@ -138,8 +128,7 @@ function scoreIncrease() {
   }
 }
 
-/* Decrease score */
-
+/*This function decreases the score */
 function wrongScoreIncrease() {
   let oldScore = document.getElementById("wrong").textContent;
   let newScore = ++oldScore;
@@ -152,7 +141,7 @@ function wrongScoreIncrease() {
   }
 }
 
-/* Resetting the game */
+/*This function resets the game */
 document.getElementById("again").addEventListener("click", function () {
   document.getElementById("answer-box");
   document.getElementById("random-image");

@@ -9,7 +9,7 @@ body {
   text-align: center;
   overflow: hidden;
 }
-
+/* Styling of the play zone */
 #play-zone {
   display: block;
   justify-content: center;
@@ -47,7 +47,7 @@ body {
   width: 130px;
   height: 40px;
 }
-
+/* Styling of the generated image */
 #random-image {
   width: 150px;
   height: 20px;
@@ -77,14 +77,14 @@ p {
   border-radius: 5%;
   width: 200px;
 }
-
+/*Media querry for small screen size */
 @media only screen and (min-width: 600px) {
   #selected-image {
     border-radius: 5%;
     width: 400px;
   }
 }
-
+/*Media querry for larger screen sizes like desktop */
 @media only screen and (min-width: 768px) {
   #selected-image {
     border-radius: 5%;
