@@ -81,13 +81,13 @@ document.addEventListener("keydown", function (event) {
 const displayMessage = function (message) {
   messageDisplayed.textContent = message;
 };
-/*function to remove event listener */
+/*variable to remove event listener */
 const completeGame = function(){
   buttonsSubmit.removeEventListener("click", userResponse);
   buttonRandomImage.removeEventListener("click", randomImages);
 }
 
-/*function to restart the game */
+/*variable to restart the game */
 const startPlayAgain = function (){
   buttonsSubmit.addEventListener("click", userResponse);
   buttonRandomImage.addEventListener("click", randomImages);
@@ -120,7 +120,7 @@ function scoreIncrease() {
   let newScore = document.getElementById("score").textContent;
   document.getElementById("score").textContent = ++newScore;
   if (newScore === 2) {
-    displayMessage("CONGS,CHAMPION!!!");
+    displayMessage("🎉CONGS,CHAMPION!!!");
     document.getElementById("football").style.backgroundColor = "#90ee90";
     messageDisplayed.style.fontSize = "30px";
     completeGame();
@@ -147,4 +147,4 @@ resetButton.addEventListener("click", function () {
   document.getElementById("wrong").textContent = "0";
   document.getElementById("score").textContent = "0";
   startPlayAgain();
-});
+});  
