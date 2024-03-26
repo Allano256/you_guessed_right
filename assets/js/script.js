@@ -81,6 +81,17 @@ document.addEventListener("keydown", function (event) {
 const displayMessage = function (message) {
   messageDisplayed.textContent = message;
 };
+/*function to remove event listener */
+const completeGame = function(){
+  buttonsSubmit.removeEventListener("click", userResponse);
+  buttonRandomImage.removeEventListener("click", randomImages);
+}
+
+/*function to restart the game */
+const startPlayAgain = function (){
+  buttonsSubmit.addEventListener("click", userResponse);
+  buttonRandomImage.addEventListener("click", randomImages);
+}
 
 /** This function checks the outcome of the random image and matches it with the user's response*/
 function userResponse() {
@@ -112,8 +123,7 @@ function scoreIncrease() {
     displayMessage("CONGS,CHAMPION!!!");
     document.getElementById("football").style.backgroundColor = "#90ee90";
     messageDisplayed.style.fontSize = "30px";
-    buttonsSubmit.removeEventListener("click", userResponse);
-    buttonRandomImage.removeEventListener("click", randomImages);
+    completeGame();
   }
 }
 
@@ -125,8 +135,7 @@ function wrongScoreIncrease() {
 
   if (newScore === 2) {
     displayMessage("Game Over...");
-    buttonsSubmit.removeEventListener("click", userResponse);
-    buttonRandomImage.removeEventListener("click", randomImages);
+    completeGame();
   }
 }
 
@@ -137,6 +146,5 @@ resetButton.addEventListener("click", function () {
   messageDisplayed.style.fontSize ="30px";
   document.getElementById("wrong").textContent = "0";
   document.getElementById("score").textContent = "0";
-  buttonsSubmit.addEventListener("click", userResponse);
-  buttonRandomImage.addEventListener("click", randomImages);
+  startPlayAgain();
 });
