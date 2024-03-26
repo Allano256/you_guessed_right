@@ -105,7 +105,7 @@ function userResponse() {
     scoreIncrease();
     clearAnswerbox();
   } else {
-    displayMessage("Oh sorry try again...");
+    displayMessage("Oh sorry try again...😟");
     wrongScoreIncrease();
     clearAnswerbox();
   }
@@ -120,7 +120,7 @@ function scoreIncrease() {
   let newScore = document.getElementById("score").textContent;
   document.getElementById("score").textContent = ++newScore;
   if (newScore === 2) {
-    displayMessage("🎉CONGS,CHAMPION!!!");
+    displayMessage("CONGS,CHAMPION!!!🎉🎉🎉");
     document.getElementById("football").style.backgroundColor = "#90ee90";
     messageDisplayed.style.fontSize = "30px";
     completeGame();
