@@ -105,7 +105,7 @@ function userResponse() {
     scoreIncrease();
     clearAnswerbox();
   } else {
-    displayMessage("Oh sorry try again...😟");
+    displayMessage("Oh sorry try again...");
     wrongScoreIncrease();
     clearAnswerbox();
   }
