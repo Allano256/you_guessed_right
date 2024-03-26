@@ -2,6 +2,8 @@ let buttonsSubmit = document.getElementById("submit");
 let buttonRandomImage = document.getElementById("random-image");
 let images = document.getElementById("img");
 let selectedImage;
+let resetButton = document.getElementById("again");
+let messageDisplayed = document.getElementById("message");
 
 /*Array containing the images to be displayed */
 let footballImagesArray = [
@@ -50,7 +52,7 @@ let footballImagesArray = [
 ];
 
 /* A function that generates random images */
-function randomImages() {
+  function randomImages() {
   imgNumber = Math.abs(
     Math.floor(Math.random() * (0 - footballImagesArray.length))
   );
@@ -77,7 +79,7 @@ document.addEventListener("keydown", function (event) {
 
 /*This variable is for the message to be displayed as a result of any input */
 const displayMessage = function (message) {
-  document.getElementById("message").textContent = message;
+  messageDisplayed.textContent = message;
 };
 
 /** This function checks the outcome of the random image and matches it with the user's response*/
@@ -109,7 +111,7 @@ function scoreIncrease() {
   if (newScore === 2) {
     displayMessage("CONGS,CHAMPION!!!");
     document.getElementById("football").style.backgroundColor = "#90ee90";
-    document.getElementById("message").style.fontSize = "30px";
+    messageDisplayed.style.fontSize = "30px";
     buttonsSubmit.removeEventListener("click", userResponse);
     buttonRandomImage.removeEventListener("click", randomImages);
   }
@@ -129,9 +131,12 @@ function wrongScoreIncrease() {
 }
 
 /*This function resets the game */
-document.getElementById("again").addEventListener("click", function () {
-  document.getElementById("answer-box");
-  document.getElementById("random-image");
+resetButton.addEventListener("click", function () {
+  document.getElementById("football").style.backgroundColor = "rgb(0,255,255)";
+  messageDisplayed.textContent = "start guessing...";
+  messageDisplayed.style.fontSize ="30px";
   document.getElementById("wrong").textContent = "0";
   document.getElementById("score").textContent = "0";
+  buttonsSubmit.addEventListener("click", userResponse);
+  buttonRandomImage.addEventListener("click", randomImages);
 });
